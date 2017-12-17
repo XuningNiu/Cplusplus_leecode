@@ -1,0 +1,25 @@
+ass Solution {
+public:
+    int majorityElement(vector<int>& nums) {
+        int max=0;
+        int count=0;
+        int i=0;
+        
+        for(i=0; i< nums.size(); i++){
+            if(max==nums.at(i)){
+                count++;
+            }
+            else{
+                if(count == 0){
+                    max = nums.at(i);
+                    count++;
+                }
+                else{
+                    count--;
+                }
+            }
+        }
+        
+        return max;
+    }
+};
